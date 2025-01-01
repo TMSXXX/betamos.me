@@ -11,7 +11,7 @@ function createRain() {
     const x = Math.random() * (window.innerWidth + Math.tan(15 * Math.PI / 180) * window.innerWidth);
     const scale = Math.random() * 0.8 + 0.2;
     const height = 80 * scale;
-    const opacity = scale * 0.1 + 0.15;
+    const opacity = scale * 0.2 + 0.15;
     const speed = 25 / ((1 - scale) * 0.6 + 0.3);
 
     raindrops.push({ x, y: -height, height, opacity, speed });
