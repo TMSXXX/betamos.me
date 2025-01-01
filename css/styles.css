@@ -1,5 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
+a {
+    transition: all 0.3s ease;
+    color: white;
+    text-decoration: none; /* 可选：移除下划线 */
+}
+
+a:hover {
+    background-color: white;
+    color: black;
+}
+
 body {
     background-color: #0d0d0d;
     color: #ffffff;
@@ -85,4 +96,36 @@ footer {
     text-align: center;
     padding: 1rem 0;
     width: 100%;
+<<<<<<< HEAD
+=======
+}
+
+#rain {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.rain-drop {
+    position: absolute;
+    top: -200px;
+    width: 2px;
+    height: 200px;
+    background: rgba(215, 215, 215, 0.571);
+    animation: fall linear infinite;
+    animation-timing-function: cubic-bezier(0.6, 0, 1, 1);
+    animation-fill-mode: forwards; /* 保持动画结束时的状态 */
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh) translateX(-5vw);
+        opacity: 0; /* 使雨滴在底部时透明度为0 */
+    }
+>>>>>>> 5efcffdb1b636b434ec1b194570d495cb4c7a776
 }
