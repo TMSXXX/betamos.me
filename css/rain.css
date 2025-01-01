@@ -1,0 +1,25 @@
+#bgrain {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	overflow: hidden;
+}
+
+.rain {
+	position: absolute;
+	width: 1px;
+	background: linear-gradient(transparent, rgba(255, 255, 255, 0.8));
+	animation: rain linear infinite;
+}
+
+@keyframes rain {
+	0% {
+		transform: translateX(0) translateY(-100px) skewX(-15deg);
+	}
+	100% {
+		transform: translateX(calc(tan(-15deg) * 100vh)) translateY(100vh) skewX(-15deg);
+	}
+}
