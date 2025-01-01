@@ -1,5 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
+a {
+    transition: all 0.3s ease;
+    color: white;
+    text-decoration: none; /* 可选：移除下划线 */
+}
+
+a:hover {
+    background-color: white;
+    color: black;
+}
+
 body {
     background-color: #0d0d0d;
     color: #ffffff;
@@ -103,9 +114,9 @@ footer {
     top: -200px;
     width: 2px;
     height: 200px;
-    background: rgba(146, 146, 146, 0.5);
+    background: rgba(215, 215, 215, 0.571);
     animation: fall linear infinite;
-    animation-timing-function: cubic-bezier(0.4, 0, 1, 1);
+    animation-timing-function: cubic-bezier(0.6, 0, 1, 1);
     animation-fill-mode: forwards; /* 保持动画结束时的状态 */
 }
 
