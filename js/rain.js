@@ -42,10 +42,13 @@ function addRainDrops() {
     for (let i = 0; i < 4; i++) {
         createRain();
     }
+    setTimeout(addRainDrops, Math.floor(window.innerWidth / 400));
 }
+addRainDrops();
 
-setInterval(addRainDrops, Math.floor(window.innerWidth / 400));
 function animate() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
     updateRain();
     requestAnimationFrame(animate);
 }
