@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import PostCard from '../blog/PostCard.vue'
-import { getMdFiles } from '../../utils/mdLoader.js'
+import { getMdFiles } from '@/utils/mdLoader.js'
 
 
 const posts = ref(
