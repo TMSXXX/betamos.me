@@ -5,6 +5,7 @@ import Post from './components/pages/PostPage.vue'
 </script>
 
 <template>
+  <title>Downpour</title>
   <div class="blog-container">
     <header class="blog-header">
       <router-link to="/">
