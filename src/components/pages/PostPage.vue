@@ -23,7 +23,9 @@ onMounted(async () => {
     <section class="article">
       <h1>{{ meta.title }}</h1>
       <div class="post-meta" v-if="meta.date">
-        <span class="post-date">发布日期：{{ new Date(meta.date).toISOString().split('T')[0] }}</span>
+        <span class="post-date">发布日期：{{ new Date(meta.date).toISOString().split('T')[0] }} </span>
+        <span class="post-date"> 作者：{{ meta.author }}</span>
+
       </div>
       <div v-html="content">
       </div>
