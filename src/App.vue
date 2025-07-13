@@ -5,13 +5,14 @@ import Post from './components/pages/PostPage.vue'
 </script>
 
 <template>
-  <title>Downpour</title>
+  <head>
+    <title>Downpour</title>
+  </head>
   <div class="blog-container">
     <header class="blog-header">
       <router-link to="/">
-        <h1>-- Downpour --</h1>
+        <h1 class="title">-- Downpour --</h1>
       </router-link>
-
     </header>
     <router-view></router-view>
   </div>
@@ -33,9 +34,17 @@ a {
   text-decoration: none;
 }
 
+.title {
+  font-family: 'Jetbrains Mono';
+  font-size: 26px;
+  margin-bottom: 200px;
+}
+
 .blog-header h1 {
-  font-size: 20;
+  font-size: 22;
   margin-top: 20px;
+  /* padding-bottom: 100px; */
+  margin-bottom: 20px;
   text-align: center;
   color: #7fbbb3;
   border-bottom: 2px solid #7fbbb3;

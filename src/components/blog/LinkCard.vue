@@ -1,19 +1,23 @@
 <script setup>
 import { ref } from 'vue'
 defineProps({
-  title: String,
-  content: String,
-  postId: String,
+  url: {
+    type: String,
+    required: true,
+  },
+  name: {
+    type: String,
+    default: '默认链接',
+  },
 })
 </script>
 
 <template>
-  <router-link :to="`/post/${postId}`" class="link">
-    <li class="post-card">
-      <h2>{{ title }}</h2>
-      <div v-html="content" />
-    </li>
-  </router-link>
+  <li class="post-card">
+    <a :href="url" target="_blank" rel="noopener noreferrer" class="link">
+      <h2>{{ name }}</h2>
+    </a>
+  </li>
 </template>
 
 <style scoped>
@@ -23,7 +27,7 @@ defineProps({
   padding: 20px 15px 25px 15px;
   border: 1px solid #7fbbb3;
   border-radius: 5px;
-  font-size: 15px;
+  font-size: 14px;
   background-color: #2d353b;
   color: #d3c6aa;
   cursor: pointer;
@@ -33,10 +37,7 @@ defineProps({
   /* 添加过渡动画 */
 }
 
-.link a,
-.router-link,
-.router-link-active,
-.router-link-exact-active {
+.link {
   text-decoration: none !important;
   color: inherit !important;
 }
@@ -48,7 +49,7 @@ defineProps({
 
 .post-card p {
   margin-bottom: 4px;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .post-card:hover {

@@ -2,23 +2,23 @@
 import { ref } from 'vue'
 import PostCard from '../blog/PostCard.vue'
 import { getMdFiles } from '@/utils/mdLoader.js'
-
+import LinkCard from '../blog/LinkCard.vue'
 
 const posts = ref(
-  getMdFiles()
-/*[
+  getMdFiles(),
+  /*[
   { id: 1, title: '组件测试1', content: '111' },
   { id: 2, title: '组件测试2', content: '111' },
   { id: 3, title: '组件测试3', content: '111' },
   { id: 4, title: '叮咚及 大狗叫', content: '楼下的下来到核算，一段一段带一段哈基米哈基米哈基米大狗大狗皎皎较' },
   { id: 5, title: '最后一个组件测试', content: '—一段一段带一段哈基米哈基米哈基米大狗大狗皎皎较大狗皎较—一段一段带一段哈基米哈基米哈基米大狗大狗皎皎较大狗皎较————dwa' }
   
-]*/)
-console.log(posts.value);
-console.log(JSON.parse(JSON.stringify(posts.value)));
+]*/
+)
+console.log(posts.value)
+console.log(JSON.parse(JSON.stringify(posts.value)))
 </script>
 <template>
-
   <div class="contents">
     <section class="introduction">
       <h2>我是谁</h2>
@@ -31,14 +31,28 @@ console.log(JSON.parse(JSON.stringify(posts.value)));
       <div class="articles">
         <div class="block-line">
           <ul>
-            <PostCard v-for="(post, index) in [...posts].sort((a, b) => b.id - a.id).filter((_, i) => i % 2 === 0)"
-              :key="post.id" :title="post.title" :content="post.content" :postId="post.id" />
+            <PostCard
+              v-for="(post, index) in [...posts]
+                .sort((a, b) => b.id - a.id)
+                .filter((_, i) => i % 2 === 0)"
+              :key="post.id"
+              :title="post.title"
+              :content="post.content"
+              :postId="String(post.id)"
+            />
           </ul>
         </div>
         <div class="block-line">
           <ul>
-            <PostCard v-for="(post, index) in [...posts].sort((a, b) => b.id - a.id).filter((_, i) => i % 2 !== 0)"
-              :key="post.id" :title="post.title" :content="post.content" :postId="post.id" />
+            <PostCard
+              v-for="(post, index) in [...posts]
+                .sort((a, b) => b.id - a.id)
+                .filter((_, i) => i % 2 !== 0)"
+              :key="post.id"
+              :title="post.title"
+              :content="post.content"
+              :postId="String(post.id)"
+            />
           </ul>
         </div>
       </div>
@@ -46,9 +60,12 @@ console.log(JSON.parse(JSON.stringify(posts.value)));
 
     <section class="links">
       <h2>Links</h2>
+      <LinkCard name="我的Bilibili账号" url="https://space.bilibili.com/82521848" />
+      <LinkCard name="CandleST" url="http://blog.candlest.cc" />
+      <LinkCard name="小麦盒子" url="https://wheatbox.cool/" />
+      <LinkCard name="苏 油 田" url="https://blog.suoilfield.cc/" />
     </section>
   </div>
-
 </template>
 
 <style scoped>
@@ -68,6 +85,17 @@ a {
 .articles {
   display: flex;
   justify-content: center;
+  gap: 20px;
+}
+
+.block-line {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .articles {
+    flex-direction: column;
+  }
 }
 
 .introduction {
