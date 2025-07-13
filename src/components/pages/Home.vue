@@ -21,8 +21,8 @@ console.log(JSON.parse(JSON.stringify(posts.value)))
 <template>
   <div class="contents">
     <section class="introduction">
-      <h2>我是谁</h2>
-      <p>TMSSTR, Betamos, 本曾, 姜兔 ...... 或者其他？</p>
+      <h2>这是谁的博客？</h2>
+      <p>TMSSTR, Betamos, 本曾, 姜兔, 㓈...... 或者其他？</p>
       <p>这是我的博客</p>
     </section>
 
@@ -92,7 +92,7 @@ a {
   flex: 1;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .articles {
     flex-direction: column;
   }
@@ -118,5 +118,11 @@ h2 {
   margin: auto;
   width: 60%;
   justify-content: center;
+}
+
+@media (max-width: 800px) {
+  .contents {
+    width: 90%;
+  }
 }
 </style>
