@@ -10,10 +10,13 @@ defineProps({
     default: '默认链接',
   },
 })
+const goToUrl = (url) => {
+  window.open(url, '_blank', 'noopener,noreferrer')
+}
 </script>
 
 <template>
-  <li class="post-card">
+  <li class="post-card" @click="goToUrl(url)">
     <a :href="url" target="_blank" rel="noopener noreferrer" class="link">
       <h2>{{ name }}</h2>
     </a>
